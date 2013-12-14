@@ -57,8 +57,13 @@ describe('Authorization', function () {
         }).catch(done);
     });
 
+    it('can handle two factor authentication responses', function () {
+        // Verified this manually via integration tests
+        return;
+    });
+
     it('can save the chosen or created token to a file', function () { 
-        // Verify this manually
-        return; 
+        // Verified this manually via integration tests
+        return;
     });
 });

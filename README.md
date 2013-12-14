@@ -9,7 +9,7 @@ Yet another Github Webhook thingy for Node.
 var github = require('git-at-me');
 
 github({
-    auth: require('./.github-token'),
+    auth: require('./github-token'),
     user: 'jgable',
     repo: 'git-at-me',
     // http://developer.github.com/v3/repos/hooks/#events
@@ -60,7 +60,7 @@ server.get('/', function (req, res) {
 /* snip other express configuration */
 
 github({
-    auth: require('./.github-token'),
+    auth: require('./github-token'),
     user: 'jgable',
     repo: 'git-at-me',
     events: ['push', 'pull_request', 'issues', 'release'],
