@@ -3,19 +3,6 @@ git-at-me
 
 Yet another GitHub Webhook thingy for Node.
 
-### TODO: 
-
-- [x] Create GitHub token via API if not passed
-- [x] Webhook creation (via octonode)
-- [x] Use existing server that is passed in
-- [x] Server creation and starting
-- [x] URL parsing
-- [x] Emit proper events with proper info
-- [x] Create index.js that wraps up all the functionality for easy use
-- [x] Create and expose Token and Hook creation wizard
-- [ ] Ask before saving token
-- [ ] Create secret for webhook based on hash of the token
-
 ## Getting Started
 
 ```javascript
