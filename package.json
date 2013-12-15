@@ -1,7 +1,7 @@
 {
   "name": "git-at-me",
   "version": "0.0.1",
-  "description": "Yet another github webhook thingy",
+  "description": "Yet another GitHub webhook thingy",
   "main": "index.js",
   "directories": {
     "test": "test"

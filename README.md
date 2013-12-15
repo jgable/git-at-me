@@ -12,7 +12,9 @@ Yet another GitHub Webhook thingy for Node.
 - [x] URL parsing
 - [x] Emit proper events with proper info
 - [x] Create index.js that wraps up all the functionality for easy use
-- [ ] Expose createtoken.js helper script
+- [x] Create and expose Token and Hook creation wizard
+- [ ] Ask before saving token
+- [ ] Create secret for webhook based on hash of the token
 
 ## Getting Started
 
@@ -55,10 +57,13 @@ If you don't pass an `auth` value, git-at-me will attempt to create one for you 
 
 If you specify a relative path to a module that exports an API token, it will be used as well.
 
-If you want to do it manually, you can create an API token to use from the GitHub user settings page, or from the command line like this:
+If you want to do it manually, I've included a simple [inquirer](https://github.com/SBoudrias/Inquirer.js) driven wizard to help with creating tokens and hooks.  This is handy if you don't have access to the Repo you want to add a hook to; just tell the owner of the Repo to run this script to create the necessary web hook.
 
-```shell
-curl -v -u jgable -X POST https://api.github.com/authorizations --data '{"scopes":["gist","repo"]}'
+```js
+var gitatme = require('git-at-me');
+
+// This will guide you through making a Token and a Hook for your Repo.
+gitatme.wizard();
 ```
 
 Check the [GitHub API Docs](http://developer.github.com/v3/oauth/#create-a-new-authorization) for more information about using the API for authorizations.
@@ -76,9 +81,8 @@ github({
     repo: 'git-at-me',
     events: ['push', 'pull_request', 'issues', 'release'],
     url: 'http://mycoolsite.com/git-at-me/events',
-    server: {
-        port: 3000
-    }
+    // Passing port instead of server
+    port: 3000
 }).on('push', function (pushInfo) {
     // Do something with pushed commits
 });
