@@ -11,7 +11,7 @@ Yet another GitHub Webhook thingy for Node.
 - [x] Server creation and starting
 - [x] URL parsing
 - [x] Emit proper events with proper info
-- [ ] Create index.js that wraps up all the functionality for easy use
+- [x] Create index.js that wraps up all the functionality for easy use
 - [ ] Expose createtoken.js helper script
 
 ## Getting Started
