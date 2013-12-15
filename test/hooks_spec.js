@@ -18,9 +18,7 @@ describe('Hooks', function () {
             user: 'testuser',
             repo: 'testsite',
             events: ['push', 'pull_request', 'issues'],
-            server: {
-                url: 'http://example.com/github/events'
-            }
+            url: 'http://example.com/github/events'
         });
 
         sandbox = sinon.sandbox.create();
@@ -42,7 +40,7 @@ describe('Hooks', function () {
 
             found.length.should.equal(1);
             found[0].id.should.equal('test');
-            found[0].config.url.should.equal(hooks.config.server.url);
+            found[0].config.url.should.equal(hooks.config.url);
 
             done();
         }).catch(done);
@@ -70,10 +68,10 @@ describe('Hooks', function () {
             call.args[0].name.should.equal('web');
             call.args[0].active.should.equal(true);
             call.args[0].events.should.equal(hooks.config.events);
-            call.args[0].config.url.should.equal(hooks.config.server.url);
+            call.args[0].config.url.should.equal(hooks.config.url);
 
             created.id.should.equal('test');
-            created.config.url.should.equal(hooks.config.server.url);
+            created.config.url.should.equal(hooks.config.url);
 
             done();
         }).catch(done);
@@ -98,7 +96,7 @@ describe('Hooks', function () {
             hookCreateStub.callCount.should.equal(0);
 
             created.id.should.equal('existed');
-            created.config.url.should.equal(hooks.config.server.url);
+            created.config.url.should.equal(hooks.config.url);
 
             done();
         }).catch(done);

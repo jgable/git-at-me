@@ -7,9 +7,7 @@ var hooks = new Hooks({
 	user: 'jgable',
 	repo: 'git-at-me',
 	events: ['push', 'pull_request', 'issues'],
-	server: {
-		url: 'http://requestb.in/1jexn0p1'
-	}
+	url: 'http://requestb.in/1jexn0p1'
 });
 
 /*
