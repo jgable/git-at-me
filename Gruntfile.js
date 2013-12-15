@@ -4,6 +4,10 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     var cfg = {
+        clean: {
+            githubToken: ['github-token.js']
+        },
+
         jshint2: {
             options: {
                 jshintrc: '.jshintrc'
@@ -27,7 +31,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig(cfg);
 
-    grunt.registerTask('validate', ['jshint2', 'mochacli']);
+    grunt.registerTask('validate', ['clean', 'jshint2', 'mochacli']);
 
     grunt.registerTask('default', ['validate']);
 };
