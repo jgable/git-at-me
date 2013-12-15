@@ -3,13 +3,22 @@ git-at-me
 
 Yet another Github Webhook thingy for Node.
 
+### TODO: 
+
+- Webhook creation (via octonode)
+- Server creation and starting
+- Use existing server that is passed in
+- URL parsing
+- Emit proper events with proper info
+- Expose createtoken.js helper script
+
 ## Getting Started
 
 ```javascript
 var github = require('git-at-me');
 
 github({
-    auth: require('./github-token'),
+    token: require('./github-token'),
     user: 'jgable',
     repo: 'git-at-me',
     // http://developer.github.com/v3/repos/hooks/#events
