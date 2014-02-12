@@ -1,7 +1,7 @@
 git-at-me
 =========
 
-Yet another GitHub Webhook thingy for Node.
+Github provides a way for you to subscribe to [Web Hooks](https://help.github.com/articles/creating-webhooks) (they will POST data to a url you specify) for certain events on your repo.  Unfortunately, creating a Web Hook for Pull Requests [is more complex than necessary](https://gist.github.com/bjhess/2726012).  Git-at-me should handle most of the pain points including generating a token from the command line and starting up a server to listen for notifications with minimal configuration.
 
 ## Getting Started
 
